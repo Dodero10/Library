@@ -1,0 +1,38 @@
+.top_form{
+    -fx-background-color: #fff;
+    -fx-border-color: #000;
+    -fx-border-width:  .2px .2px .5px .2px;
+}
+
+.close_btn{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.close_btn:hover{
+    -fx-background-color: #f13f57;
+}
+
+.minimize_btn{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.minimize_btn:hover{
+    -fx-background-color: #dddddd;
+}
+
+.bars{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.bars:hover{
+    -fx-background-color: #d6d6d6;
+    -fx-border-radius: 5px;
+}
+
+.nav_form{
+    -fx-background-color: linear-gradient(to bottom right, #252d50, #324f6b);
+
+}

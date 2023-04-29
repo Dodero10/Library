@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="login_form" stylesheets="@../Design/loginDesign.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.Controllers.loginController">
+   <AnchorPane layoutX="22.0" layoutY="35.0" prefHeight="330.0" prefWidth="555.0" styleClass="card-form" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="35.0">
+      <FontAwesomeIconView fill="WHITE" glyphName="USERS" layoutX="251.0" layoutY="82.0" size="5em" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="240.71428680419922" AnchorPane.topAnchor="30.571430206298828" />
+      <Label layoutX="241.0" layoutY="106.0" text="Login" textFill="WHITE" AnchorPane.leftAnchor="241.0" AnchorPane.rightAnchor="231.66666666666663" AnchorPane.topAnchor="106.0">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="login_Btn" layoutX="256.0" layoutY="271.0" mnemonicParsing="false" onAction="#login" styleClass="login_btn" text="Login" AnchorPane.leftAnchor="256.0" AnchorPane.rightAnchor="246.66666666666663" AnchorPane.topAnchor="271.0" />
+      <TextField fx:id="studentNumber" layoutX="192.0" layoutY="165.0" prefWidth="180.0" promptText="Student Number" styleClass="textfield" stylesheets="@../Design/loginDesign.css" AnchorPane.leftAnchor="192.0" AnchorPane.rightAnchor="182.66666666666663" AnchorPane.topAnchor="165.0" />
+      <PasswordField fx:id="passWord" layoutX="192.0" layoutY="206.0" prefWidth="180.0" promptText="Password" styleClass="textfield" stylesheets="@../Design/loginDesign.css" AnchorPane.leftAnchor="192.0" AnchorPane.rightAnchor="182.66666666666663" AnchorPane.topAnchor="206.0" />
+   </AnchorPane>
+   <Button fx:id="close" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" prefHeight="24.0" prefWidth="52.0" styleClass="close" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+      <graphic>
+         <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" styleClass="close" />
+      </graphic>
+   </Button>
+   <Button fx:id="minimize" layoutX="493.0" layoutY="2.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="52.0" styleClass="close" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="2.0">
+      <graphic>
+         <FontAwesomeIconView fill="WHITE" glyphName="MINUS" />
+      </graphic>
+   </Button>
+</AnchorPane>
