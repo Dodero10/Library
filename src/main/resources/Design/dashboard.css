@@ -32,7 +32,77 @@
     -fx-border-radius: 5px;
 }
 
+.semiTop_form{
+    -fx-background-color: #ddd;
+    -fx-border-color: #000;
+    -fx-border-width: 0px 0px .5px 0px;
+}
 .nav_form{
     -fx-background-color: linear-gradient(to bottom right, #252d50, #324f6b);
+}
 
+.edit_btn{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.nav_btn{
+    -fx-background-color: linear-gradient(to bottom right, #344275, #3a6389);
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-font-size: 15px;
+    -fx-text-fill: #fff;
+    -fx-font-family: "Microsoft Sans Serif";
+}
+
+.nav_btn:hover{
+    -fx-background-color: linear-gradient(to bottom right, #46589a, #4278a7);
+}
+.nav_lbl{
+    -fx-text-fill: #fff;
+}
+
+.logout_btn{
+    -fx-background-color: #366d9d;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+}
+.logout_btn:hover{
+    -fx-background-radius: 10px;
+    -fx-background-color: #396fc6;
+}
+
+.card_form{
+    -fx-background-color: #f8f8f8;
+    -fx-border-color: #454368;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+.image_card{
+    -fx-background-color: #fff;
+    -fx-border-color: #000;
+}
+
+.save_btn{
+    -fx-background-color: #558e74;
+    -fx-background-radius: 15px;
+    -fx-font-size: 15px;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+}
+
+.save_btn:hover{
+    -fx-background-color: #57b187;
+}
+
+.take_btn{
+    -fx-background-color: #914f96;
+    -fx-background-radius: 15px;
+    -fx-cursor: pointer;
+    -fx-font-size: 15px;
+    -fx-text-fill: #fff;
+}
+.take_btn:hover{
+    -fx-background-color: #b356bb;
 }

@@ -1,6 +1,7 @@
 package com.example.library.Controllers;
 
 import com.example.library.SQL.DBConnect;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -25,62 +26,64 @@ public class loginController implements Initializable {
     public Button close;
     public Button minimize;
 // Datebase tools
-    private Connection connect;
-    private PreparedStatement prepare;
-    private Statement statement;
-    private ResultSet result;
+    public Connection connect;
+    public PreparedStatement prepare;
+    public Statement statement;
+    public ResultSet result;
 
-    public void login(){
-
-        login_Btn.setOnMouseClicked(mouseEvent -> {
+    DBConnect db = new DBConnect();
+    @FXML
+    public void login(ActionEvent event){
 
             String sql = "SELECT * FROM student WHERE studentNumber = ? and passwordStudent = ?";
 
             try{
-                prepare = connect.prepareStatement(sql);
-                prepare.setString(1, studentNumber.getText());
-                prepare.setString(2, passWord.getText());
-                result = prepare.executeQuery();
+                if(event.getSource() == login_Btn) {
+                    prepare = db.con.prepareStatement(sql);
+                    prepare.setString(1, studentNumber.getText());
+                    prepare.setString(2, passWord.getText());
 
-                Alert alert;
+                    result = prepare.executeQuery();
 
-                if(studentNumber.getText().isEmpty() || passWord.getText().isEmpty()){
-                    alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Admin Message");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Please fill the blank field");
-                    alert.showAndWait();
-                }else{
-                    if(result.next()) {
+                    Alert alert;
 
-                        alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Admin Message");
-                        alert.setHeaderText(null);
-                        alert.setContentText("Successfull Login");
-                        alert.showAndWait();
-
-                        // To hide login form
-                        login_Btn.getScene().getWindow().hide();
-                        // For Dasboard
-                        Parent root = FXMLLoader.load(getClass().getResource("/FXML/dashboard.fxml"));
-
-                        Stage stage = new Stage();
-                        Scene scene = new Scene(root);
-                        stage.setScene(scene);
-                        stage.show();
-
-
-                    } else {
+                    if (studentNumber.getText().isEmpty() || passWord.getText().isEmpty()) {
                         alert = new Alert(Alert.AlertType.ERROR);
                         alert.setTitle("Admin Message");
                         alert.setHeaderText(null);
-                        alert.setContentText("Wrong username or password");
+                        alert.setContentText("Please fill the blank field");
                         alert.showAndWait();
+                    } else {
+                        if (result.next()) {
+
+                            alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Admin Message");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Successfull Login");
+                            alert.showAndWait();
+
+                            // To hide login form
+                            login_Btn.getScene().getWindow().hide();
+                            // For Dasboard
+                            Parent root = FXMLLoader.load(getClass().getResource("/FXML/dashboard.fxml"));
+
+                            Stage stage = new Stage();
+                            Scene scene = new Scene(root);
+                            stage.setScene(scene);
+                            stage.show();
+
+
+                        } else {
+                            alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setTitle("Admin Message");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Wrong username or password");
+                            alert.showAndWait();
+                        }
                     }
                 }
-
             } catch (Exception e){e.printStackTrace();}
-        });
+        ;
 //        String sql = "SELECT * FROM student WHERE studentNumber = ? and passwordStudent = ?";
 //        DBConnect db = new DBConnect();
 //

@@ -3,72 +3,97 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="986.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.Controllers.dasboardController">
-   <children>
-      <BorderPane layoutX="159.0" layoutY="83.0" prefHeight="600.0" prefWidth="986.0" stylesheets="@../Design/dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <left>
-            <AnchorPane prefHeight="500.0" prefWidth="225.0" BorderPane.alignment="CENTER">
-               <children>
-                  <AnchorPane layoutY="-49.0" prefHeight="500.0" prefWidth="225.33333333333334" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Circle fill="DODGERBLUE" layoutX="113.0" layoutY="97.0" radius="72.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Label layoutX="64.0" layoutY="175.0" text="Welcome to MLBB" />
-                        <Label layoutX="27.0" layoutY="207.0" text="Student #" />
-                        <Label layoutX="106.0" layoutY="207.0" text="2022024" />
-                        <Button layoutX="129.0" layoutY="151.0" mnemonicParsing="false">
-                           <graphic>
-                              <FontAwesomeIconView glyphName="EDIT" />
-                           </graphic>
-                        </Button>
-                        <Button layoutX="59.0" layoutY="262.0" mnemonicParsing="false" text="Available Book" />
-                        <Button layoutX="59.0" layoutY="295.0" mnemonicParsing="false" text="Issue Book" />
-                        <Button layoutX="60.0" layoutY="332.0" mnemonicParsing="false" text="Return Book" />
-                        <Button layoutX="60.0" layoutY="365.0" mnemonicParsing="false" text="Save Book" />
-                     </children>
-                  </AnchorPane>
-               </children>
+   <BorderPane layoutX="159.0" layoutY="83.0" prefHeight="600.0" prefWidth="986.0" stylesheets="@../Design/dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <left>
+         <AnchorPane prefHeight="500.0" prefWidth="225.0" BorderPane.alignment="CENTER">
+            <AnchorPane fx:id="nav_form" layoutY="-49.0" prefHeight="500.0" prefWidth="225.0" styleClass="nav_form" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <Circle fx:id="circle_image" fill="DODGERBLUE" layoutX="113.0" layoutY="97.0" radius="72.0" stroke="BLACK" strokeType="INSIDE" />
+               <Label layoutX="64.0" layoutY="175.0" styleClass="nav_lbl" text="Welcome to MLBB" />
+               <Label layoutX="27.0" layoutY="207.0" styleClass="nav_lbl" text="Student #" />
+               <Label fx:id="studentNumber_lbl" layoutX="106.0" layoutY="207.0" styleClass="nav_lbl" text="2022024" />
+               <Button fx:id="edit_btn" layoutX="129.0" layoutY="151.0" mnemonicParsing="false" styleClass="edit_btn">
+                  <graphic>
+                     <FontAwesomeIconView glyphName="EDIT" />
+                  </graphic>
+               </Button>
+               <Button fx:id="availableBook_btn" layoutX="35.0" layoutY="266.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="167.0" styleClass="nav_btn" text="Available Book" />
+               <Button fx:id="issueBook_btn" layoutX="36.0" layoutY="315.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="167.0" styleClass="nav_btn" text="Issue Book" />
+               <Button fx:id="returnBook_btn" layoutX="35.0" layoutY="360.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="167.0" styleClass="nav_btn" text="Return Book" />
+               <Button fx:id="saveBook_btn" layoutX="34.0" layoutY="405.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="167.0" styleClass="nav_btn" text="Save Book" />
+               <Line endX="100.0" layoutX="118.0" layoutY="241.0" startX="-100.0" stroke="WHITE" />
+               <Button fx:id="signOut_btn" layoutX="68.0" layoutY="460.0" mnemonicParsing="false" onAction="#logout" styleClass="logout_btn" text="Sign out">
+                  <graphic>
+                     <FontAwesomeIconView glyphName="SIGN_OUT" />
+                  </graphic>
+               </Button>
             </AnchorPane>
-         </left>
-         <top>
-            <AnchorPane prefHeight="100.0" prefWidth="987.0" BorderPane.alignment="CENTER">
-               <children>
-                  <AnchorPane prefHeight="40.0" prefWidth="987.0" styleClass="top_form">
-                     <children>
-                        <Button layoutX="898.0" layoutY="2.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="44.0" styleClass="minimize_btn">
-                           <graphic>
-                              <FontAwesomeIconView glyphName="MINUS" />
-                           </graphic>
-                        </Button>
-                        <Button layoutX="942.0" layoutY="2.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="44.0" styleClass="close_btn">
-                           <graphic>
-                              <FontAwesomeIconView glyphName="CLOSE" />
-                           </graphic>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-                  <Button layoutX="22.0" layoutY="50.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="20.0" styleClass="bars">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="BARS" size="2em" />
-                     </graphic>
-                  </Button>
-                  <Button layoutX="21.0" layoutY="50.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="37.0" styleClass="bars">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="CHEVRON_LEFT" size="2em" />
-                     </graphic>
-                  </Button>
-                  <Label layoutX="72.0" layoutY="57.0" text="Library Management System">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
-               </children>
+         </AnchorPane>
+      </left>
+      <top>
+         <AnchorPane prefHeight="100.0" prefWidth="987.0" styleClass="semiTop_form" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="40.0" prefWidth="987.0" styleClass="top_form">
+               <Button layoutX="898.0" layoutY="2.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="44.0" styleClass="minimize_btn">
+                  <graphic>
+                     <FontAwesomeIconView glyphName="MINUS" />
+                  </graphic>
+               </Button>
+               <Button fx:id="exit_btn" layoutX="942.0" layoutY="2.0" mnemonicParsing="false" onAction="#exit" prefHeight="24.0" prefWidth="44.0" styleClass="close_btn">
+                  <graphic>
+                     <FontAwesomeIconView glyphName="CLOSE" />
+                  </graphic>
+               </Button>
             </AnchorPane>
-         </top>
-      </BorderPane>
-   </children>
+            <Button fx:id="bars_btn" layoutX="22.0" layoutY="50.0" mnemonicParsing="false" onAction="#sliderBars" prefHeight="12.0" prefWidth="20.0" styleClass="bars" visible="false">
+               <graphic>
+                  <FontAwesomeIconView glyphName="BARS" size="2em" />
+               </graphic>
+            </Button>
+            <Button fx:id="arrows_btn" layoutX="21.0" layoutY="50.0" mnemonicParsing="false" onAction="#slideArrow" prefHeight="32.0" prefWidth="37.0" styleClass="bars">
+               <graphic>
+                  <FontAwesomeIconView glyphName="CHEVRON_LEFT" size="2em" />
+               </graphic>
+            </Button>
+            <Label layoutX="72.0" layoutY="57.0" text="Library Management System">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </AnchorPane>
+      </top>
+      <center>
+         <AnchorPane fx:id="mainCenter_form" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <AnchorPane fx:id="availableBook_font" prefHeight="500.0" prefWidth="762.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <AnchorPane layoutX="28.0" layoutY="22.0" prefHeight="467.0" prefWidth="214.0" styleClass="card_form">
+                  <AnchorPane layoutX="45.0" layoutY="14.0" prefHeight="154.0" prefWidth="124.0" styleClass="image_card">
+                     <ImageView fx:id="availableBookImage" fitHeight="162.0" fitWidth="130.0" layoutX="1.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true" />
+                  </AnchorPane>
+                  <Button fx:id="take_btn" layoutX="151.0" layoutY="262.0" mnemonicParsing="false" styleClass="take_btn" text="Take" />
+                  <Button fx:id="save_btn" layoutX="19.0" layoutY="262.0" mnemonicParsing="false" styleClass="save_btn" text="Save" />
+                  <Label fx:id="availableBook_title" layoutX="35.0" layoutY="223.0" styleClass="take_btn" text="Programming Languge" />
+               </AnchorPane>
+               <AnchorPane layoutX="299.0" layoutY="23.0" prefHeight="465.0" prefWidth="435.0" styleClass="card_form">
+                  <TableView fx:id="availableBooks_table" layoutX="8.0" prefHeight="465.3333333333333" prefWidth="435.3333333333333" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="col_ab_bookTitle" prefWidth="110.0" text="Book Title" />
+                        <TableColumn fx:id="col_ab_author" prefWidth="98.00003051757812" text="Author" />
+                        <TableColumn fx:id="col_ab_bookType" prefWidth="108.66668701171875" text="Book Type" />
+                        <TableColumn fx:id="col_ab_publicDate" prefWidth="118.0" text="Public Date" />
+                     </columns>
+                  </TableView>
+               </AnchorPane>
+               <Line endX="100.0" layoutX="169.0" layoutY="22.0" startX="100.0" startY="460.0" />
+            </AnchorPane>
+         </AnchorPane>
+      </center>
+   </BorderPane>
 </AnchorPane>
